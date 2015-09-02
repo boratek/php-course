@@ -3,23 +3,28 @@
  * Simple script to draw square, triangles, chessboard and what you want (he he joke)
  */
 include_once 'lib.php';
-
-if (0 < count($_POST)) {
-	$validation = validation();
-	if (true === $validation['result']) {
-		echo $validation['message'];
-		//draw();
-	} else {
-		echo $validation['message'];
-	}
-}
 ?>
+<?php
+if (0 < count($_POST)) :
+	$validation = validation();
+	if (true === $validation['result']):
+?>
+		<p class="output"><?php echo $validation['message']; ?></p>
+		<?php //draw(); ?>
+<?php
+	else:
+?>
+		<p class="output"><?php echo $validation['message']; ?></p>
+
+	<?php endif; ?>
+<?php endif; ?>
+
 <hr>
 <h1>Figures</h1>
 <form action="index.php" method="POST" id="figures">
 
 	<p>Figure type:</p>
-	<select name="type" form="figures">
+	<select class="type" name="type" form="figures">
 		<option value="triangle">Triangle</option>
 		<option value="square">Square</option>
 		<option value="double_triangle">Double Triangle</option>
@@ -49,5 +54,5 @@ if (0 < count($_POST)) {
 	</select>
 
 	<br/>
-	<input type="submit" value="Create Figures">
+	<input class="submit" type="submit" value="Create Figures">
 </form>

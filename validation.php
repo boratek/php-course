@@ -22,14 +22,14 @@ function validation()
         return $result;
     }
 
-    if (!checkSize()) {
-        $result = array(
-            'result' => false,
-            'message' => 'Size is invalid!'
-        );
-
-        return $result;
-    }
+//    if (!checkSize()) {
+//        $result = array(
+//            'result' => false,
+//            'message' => 'Size is invalid!'
+//        );
+//
+//        return $result;
+//    }
 //
 //    if (!checkScriber()) {
 //        $result = array(
