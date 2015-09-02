@@ -1,0 +1,8 @@
+default:
+  extensions:
+    Behat\MinkExtension:
+      base_url: 'http://php.dev/'
+      sessions:
+        default:
+          selenium2:
+            wd_host: http://php.dev:4444/wd/hub
