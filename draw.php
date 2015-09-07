@@ -28,3 +28,22 @@ function draw()
     return $result;
 }
 
+function triangle()
+{
+
+}
+
+function square()
+{
+
+}
+
+function double_triangle()
+{
+
+}
+
+function chess_board()
+{
+
+}
