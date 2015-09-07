@@ -4,18 +4,15 @@
  */
 include_once 'lib.php';
 ?>
-<?php
-if (0 < count($_POST)) :
-	$validation = validation();
-	if (true === $validation['result']):
-?>
-		<p class="output"><?php echo $validation['message']; ?></p>
-		<?php //draw(); ?>
-<?php
-	else:
-?>
-		<p class="output"><?php echo $validation['message']; ?></p>
-
+<?php if (0 < count($_POST)): ?>
+	<?php $validation = validation(); ?>
+	<?php if (isset($validation['success']['result'])): ?>
+		<p class="output_success"><?php echo $validation['success']['message']; ?></p>
+		<?php draw(); ?>
+	<?php elseif (isset($validation['errors']) && 0 < count($validation['errors'])): ?>
+		<?php foreach ($validation['errors'] as $key => $result):?>
+			<p class="output_error"><?php echo $result['message']; ?></p>
+		<?php endforeach;?>
 	<?php endif; ?>
 <?php endif; ?>
 
