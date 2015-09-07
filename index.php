@@ -44,14 +44,15 @@ include_once 'lib.php';
 	<input type="text" name="name">
 	<br />
 
-	<p>Multiple Figures</p><input type="checkbox" name="multi" value="multi">
-	<br/>
-	<select multiple name="multi_figures_list" form="figures">
-		<option value="triangle">Triangle</option>
-		<option value="square">Square</option>
-		<option value="double_triangle">Double Triangle</option>
-		<option value="chess_board">Chess Board</option>
-	</select>
+<!--	//TODO: Implement multiple figures-->
+<!--	<p>Multiple Figures</p><input type="checkbox" name="multi" value="multi">-->
+<!--	<br/>-->
+<!--	<select multiple name="multi_figures_list" form="figures">-->
+<!--		<option value="triangle">Triangle</option>-->
+<!--		<option value="square">Square</option>-->
+<!--		<option value="double_triangle">Double Triangle</option>-->
+<!--		<option value="chess_board">Chess Board</option>-->
+<!--	</select>-->
 
 	<br/>
 	<input class="submit" type="submit" value="Create Figures">

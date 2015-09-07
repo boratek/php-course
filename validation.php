@@ -54,6 +54,7 @@ function validation()
 
     return $result;
 }
+//TODO: Implement multiple figures
 
 //    if (!isMulti()) {
 //
@@ -101,9 +102,9 @@ function checkScriber()
 function checkName()
 {
     $result = false;
-    if (isset($_POST['scriber']) && !empty($_POST['scriber'])) {
-        $scriber = $_POST['scriber'];
-        if (preg_match('/\w+/', $scriber)) {
+    if (isset($_POST['name']) && !empty($_POST['name'])) {
+        $name = $_POST['name'];
+        if (preg_match('/\w+/', $name)) {
             return true;
         }
     }

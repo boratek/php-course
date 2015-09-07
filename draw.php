@@ -6,44 +6,90 @@
 function draw()
 {
     $type = $_POST['type'];
+    $name = $_POST['name'];
     $result = false;
 
     switch ($type) {
         case 'triangle':
-            $result = triangle();
+            $result = 'triangle';
             break;
         case 'square':
-            $result = square();
+            $result = 'square';
             break;
         case 'double_triangle':
-            $result = doubleTriangle();
+            $result = 'doubleTriangle';
             break;
         case 'chess_board':
-            $result = chessBoard();
+            $result = 'chessBoard';
             break;
         default:
             break;
     }
 
-    return $result;
+    echo '<h1>This is ' . $name .'</h1>';
+    figure($result);
 }
 
-function triangle()
+function figure($figure)
 {
+    $size = $_POST['size'];
+    $scriber = $_POST['scriber'];
+
+    $figure($size, $scriber);
+}
+
+function triangle($size, $scriber)
+{
+    for ($i = 0; $i <= $size; $i++) {
+        for ($j = 0; $j <=$i; $j++){
+            echo $scriber;
+        }
+        echo "<br/>";
+    }
+}
+
+function square($size, $scriber)
+{
+    for ($i = 0; $i <= $size; $i++){
+        for ($j = 0; $j <= $size; $j++){
+            echo $scriber;
+        }
+        echo "<br/>";
+    }
 
 }
 
-function square()
+function doubleTriangle($size, $scriber)
 {
+    for ($i = 0; $i <= $size; $i++) {
+        for ($j = 0; $j <=$i; $j++){
+            echo $scriber;
+        }
+        echo "<br/>";
+    }
 
+    for ($i = $size; $i >= 0; $i--) {
+        for ($j = 0; $j <= $i; $j++){
+            echo $scriber;
+        }
+        echo "<br/>";
+    }
 }
 
-function double_triangle()
+function chessBoard($size, $scriber)
 {
+    $space = ' ';
 
-}
-
-function chess_board()
-{
-
+    for ($i = 0; $i <= $size; $i++) {
+        if ($i % 2 == 0) {
+            echo $space;
+        }
+        for ($j = 0; $j <= $size; $j++) {
+            if ($j % 2 == 0) {
+                echo $scriber;
+            }
+            echo $space;
+        }
+        echo "<br/>";
+    }
 }
