@@ -4,22 +4,27 @@
  */
 include_once 'lib.php';
 
-if (0 < count($_POST)) {
-	$validation = validation();
-	if (true === $validation['result']) {
-		echo $validation['message'];
-		//draw();
-	} else {
-		echo $validation['message'];
-	}
-}
 ?>
+<?php if (0 < count($_POST)): ?>
+	<?php $validation = validation(); ?>
+	<?php if (isset($validation['success']['result'])): ?>
+		<p class="output_success"><?php echo $validation['success']['message']; ?></p>
+		<?php draw(); ?>
+	<?php elseif (isset($validation['errors']) && 0 < count($validation['errors'])): ?>
+		<?php foreach ($validation['errors'] as $key => $result):?>
+			<p class="output_error"><?php echo $result['message']; ?></p>
+		<?php endforeach;?>
+	<?php endif; ?>
+<?php endif; ?>
+
+
 <hr>
 <h1>Figures</h1>
 <form action="index.php" method="POST" id="figures">
 
 	<p>Figure type:</p>
-	<select name="type" form="figures">
+
+	<select class="type" name="type" form="figures">
 		<option value="triangle">Triangle</option>
 		<option value="square">Square</option>
 		<option value="double_triangle">Double Triangle</option>
@@ -49,5 +54,5 @@ if (0 < count($_POST)) {
 	</select>
 
 	<br/>
-	<input type="submit" value="Create Figures">
+	<input class="submit" type="submit" value="Create Figures">
 </form>

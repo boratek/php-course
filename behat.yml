@@ -1,0 +1,15 @@
+default:
+  extensions:
+    Behat\MinkExtension:
+      base_url: 'http://php.dev'
+      goutte: ~
+      javascript_session: selenium2
+      default_session: selenium2
+      browser_name: 'chrome'
+      selenium2:
+        capabilities: { "browser": "chrome", "version": "44"}
+        wd_host: http://php.dev:4444/wd/hub
+      sessions:
+        default:
+          selenium2:
+            wd_host: http://php.dev:4444/wd/hub
